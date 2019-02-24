@@ -1,0 +1,27 @@
+.avatar img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.user-controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+}
+
+.tab-nav a + a {
+    margin-left: 15px;
+}
+
+.tab-nav a {
+    padding: 18px;
+    color: dimgray;
+}
+
+.tab-nav a.active {
+    border-bottom: 2px solid purple;
+    color: purple;
+    /* background-color: lightgrey; */
+}

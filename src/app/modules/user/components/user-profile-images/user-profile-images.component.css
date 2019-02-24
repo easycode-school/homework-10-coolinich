@@ -1,8 +1,8 @@
 .row.images {
-    padding-top: 30px;
+    padding: 30px;
     /* background-color: lightgrey; */
 }
 
-.col-4 mat-card {
+mat-card.img-wrap {
     margin-bottom: 15px;
 }

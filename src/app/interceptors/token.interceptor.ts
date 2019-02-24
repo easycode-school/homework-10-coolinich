@@ -19,8 +19,6 @@ export class TokenInterceptor implements HttpInterceptor {
                 'x-access-token': `${this.auth.getToken}`
             }
         });
-        console.log(req);
         return next.handle(req);
     }
-
 }

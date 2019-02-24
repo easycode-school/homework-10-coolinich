@@ -4,6 +4,8 @@ import { environment } from './../../../../environments/environment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { OnLoginAnswer } from './../interfaces/OnLoginAnswer';
+import { User } from './../interfaces/User';
+import { OnSignupAnswer } from './../interfaces/OnSignupAnswer';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     httpBackend: HttpBackend
-  ) { 
+  ) {
     this.http = new HttpClient(httpBackend);
   }
 
@@ -28,10 +30,19 @@ export class AuthService {
       map((res: OnLoginAnswer): OnLoginAnswer => {
         if (!res.error) {
           localStorage.setItem('mlp_client_token', res.token);
-        } 
-
+        }
         return res;
       })
     )
+  }
+
+  signup(newUserData: User): Observable<OnSignupAnswer> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'
+      })
+    };
+
+    return this.http.post<OnSignupAnswer>(`${this.apiUrl}/public/auth/signup`, newUserData, httpOptions);
   }
 }

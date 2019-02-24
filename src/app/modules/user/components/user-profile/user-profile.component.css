@@ -29,6 +29,10 @@
     /* background-color: lightgrey; */
 }
 
+.user-info {
+    margin: 0px auto 0px 15px;
+}
+
 .user-info h6 {
     line-height: 1em;
     margin-bottom: .1em;
@@ -74,6 +78,7 @@
     .user-info {
         padding-top: 50px;
         text-align: center;
+        margin: 0px;
     }
   }
 /*=== End Nav bar with user info   ===*/
